@@ -56,14 +56,25 @@ router.delete("/todos/:id", async (req, res) => {
 router.put("/todos/:id", async (req, res) => {
   const collection = getCollection();
   const _id = new ObjectId(req.params.id);
-  const { status } = req.body;
+  const { status, todo } = req.body; // Extracting both status and todo from the request body
 
-  if (typeof status !== "boolean") {
-    return res.status(400).json({ msg: "invalid status" });
+  const updateFields = {};
+  if (typeof status === "boolean") {
+    updateFields.status = status;
+  }
+  if (typeof todo === "string") {
+    updateFields.todo = todo;
   }
 
+  if (Object.keys(updateFields).length === 0) {
+    return res.status(400).json({ msg: "Invalid request body" });
+  
+  //if (typeof status !== "boolean") {
+    //return res.status(400).json({ msg: "invalid status" });
+  }
 
-  const updatedTodo = await collection.updateOne({ _id }, { $set: { status: !status } });
+  const updatedTodo = await collection.updateOne({ _id }, { $set: updateFields });
+  //const updatedTodo = await collection.updateOne({ _id }, { $set: { status: !status } });
 
   res.status(200).json(updatedTodo);
 
