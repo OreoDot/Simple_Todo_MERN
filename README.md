@@ -95,6 +95,19 @@ Visit `http://localhost:3000` to start using **DT_ToDo**!
 
 ---
 
+## **Screenshots** 📸
+
+### **Task Management Made Simple**
+![Desktop View](https://github.com/user-attachments/assets/ccfb6ef9-a6ee-44ce-bf4a-2dfd5ffb4835)
+
+### **Update Tasks**
+![Mobile App View 1](https://github.com/user-attachments/assets/770db873-82bd-4ccc-b7dc-66537fa77342)
+
+### **Update Tasks**
+![Mobile App View 2](https://github.com/user-attachments/assets/df5a3443-766a-4577-a2f6-718e0ad5008d)
+
+---
+
 ## **Why Choose DT_ToDo?** 🌟
 
 - **User-Friendly**: Designed with simplicity and ease of use in mind.
